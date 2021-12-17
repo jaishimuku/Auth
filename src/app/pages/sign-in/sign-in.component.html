@@ -1,0 +1,53 @@
+<div class="container" style="width: 400px; margin-top: 150px">
+  <!-- Content here -->
+  <h2>Sign In</h2>
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email: </label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        aria-describedby="emailHelp"
+        placeholder="Enter Address"
+        [(ngModel)]="email"
+        email="ngModel"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password: </label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        [(ngModel)]="password"
+        password="ngModel"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <a routerLink="/forgot-password">Forget Password</a>
+    </div>
+
+    <div class="form-group">
+      <span class="redirect">Don't have an account?</span
+      ><a routerLink="/sign-up">Sign Up</a>
+    </div>
+
+    <div>
+      <p *ngIf="errorMsg.length > 0" class="text-danger">
+        {{ errorMsg }}
+      </p>
+      <p *ngIf="error.message.length > 0" class="text-danger">
+        {{ error.message }}
+      </p>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

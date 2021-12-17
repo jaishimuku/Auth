@@ -1,0 +1,83 @@
+<div class="container" style="width: 400px; margin-top: 150px;">
+  <!-- Content here -->
+  <h2>Sign Up</h2>
+  <form (ngSubmit) = "signup()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        aria-describedby="emailHelp"
+        placeholder="Enter Address"
+        [(ngModel)]="email"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="fname">First Name: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="fname"
+        name="fname"
+        aria-describedby="fnamelHelp"
+        placeholder="Enter First Name"
+        [(ngModel)]="fname"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="lname">Last Name: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="lname"
+        name="lname"
+        aria-describedby="fnamelHelp"
+        placeholder="Enter Last Name"
+        [(ngModel)]="lname"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password: </label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        [(ngModel)]="password"
+        required>
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="exampleInputPassword1">Confirm Password: </label>
+      <input
+        type="password"
+        class="form-control"
+        name="confirmPassword"
+        id="exampleInputPassword1"
+        placeholder="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        required>
+    </div> -->
+
+    <div class="form-group">
+      <span class="redirect">Already have an account?</span
+        ><a routerLink="/sign-in">Sign-In</a>
+    </div>
+    <div>
+      <p *ngIf="errorMsg.length > 0" class="text-danger">
+        {{ errorMsg }}
+      </p>
+      <p *ngIf="error.message.length > 0" class="text-danger">
+        {{ error.message }}
+      </p>
+      <p *ngIf="message.length > 0" class="text-success">{{ message }}</p>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
